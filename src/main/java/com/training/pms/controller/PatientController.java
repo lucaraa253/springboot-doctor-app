@@ -40,8 +40,13 @@ public class PatientController {
 		Optional<Patient> patient = patientRepo.findById(patientId);
 		return new ResponseEntity<Patient>(patient.get(), HttpStatus.OK);
 	}
+	
+	@GetMapping("username/{username}")
+	public ResponseEntity<Patient> getPatientUsername(@PathVariable("username") String username) { //localhost:5050/patient   -GET
+		Optional<Patient> patient = patientRepo.findByUsername(username);
+		return new ResponseEntity<Patient>(patient.get(), HttpStatus.OK);
+	}
 		
-
 	
 	@PostMapping
 	public ResponseEntity<String> savePatient(@RequestBody Patient patient) {     //localhost:5050/product   -Post
