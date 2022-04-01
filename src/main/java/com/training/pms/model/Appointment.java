@@ -24,8 +24,6 @@ public class Appointment {
 	
 	private String username;
 	
-	private String password;
-	
     private String typeOfAppointment;
     
     private String doctorName;
